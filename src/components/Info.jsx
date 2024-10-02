@@ -1,18 +1,15 @@
+import { memo } from "react";
 import React from "react";
 import styled from "styled-components";
 // import { FaCopyright } from 'react-icons/fa'
 import { BiCopyright } from "react-icons/bi";
-const Info = () => {
-  return (
-    <InfoC className="bg-slate-700">
+const Info = memo(() => {
+  return <InfoC className="bg-slate-700">
       <BiCopyright size={22} />
       <span>icngt2023.org - All rights reserved.</span>
-    </InfoC>
-  );
-};
-
+    </InfoC>;
+});
 export default Info;
-
 const InfoC = styled.div`
   display: flex;
   /* position: relative;

@@ -1,20 +1,21 @@
+import { memo } from "react";
 import React from "react";
 import styled from "styled-components";
-
-const ChiefPatronsB = ({ name, about, img, class1 }) => {
-  return (
-    <Div2>
+const ChiefPatronsB = ({
+  name,
+  about,
+  img,
+  class1
+}) => {
+  return <Div2>
       <div className={class1}>
         <h1>{name}</h1>
         <span>{about}</span>
       </div>
       <img src={img} alt="" />
-    </Div2>
-  );
+    </Div2>;
 };
-
 export default ChiefPatronsB;
-
 const Div2 = styled.div`
   width: 100vw;
   display: flex;

@@ -1,9 +1,9 @@
+import { memo } from "react";
 import React from "react";
 // import './Popup.css'
 import styled from "styled-components";
 function Popup(props) {
-  return props.trigger ? (
-    <div>
+  return props.trigger ? <div>
       <Pop>
         <PopInner>
           {/* <button className='close-btn bg-slate-100'>close</button> */}
@@ -11,14 +11,9 @@ function Popup(props) {
           {props.children}
         </PopInner>
       </Pop>
-    </div>
-  ) : (
-    ""
-  );
+    </div> : "";
 }
-
 export default Popup;
-
 const Pop = styled.div`
   position: fixed;
   top: 0;
@@ -31,7 +26,6 @@ const Pop = styled.div`
   justify-content: center;
   z-index: 2;
 `;
-
 const PopInner = styled.div`
   position: relative;
   /* top: 0; */

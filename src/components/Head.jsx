@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { memo } from "react";
 import React from "react";
 
 //                   JS  FUNCTIONS
@@ -17,22 +19,18 @@ import { GiPublicSpeaker, GiHamburgerMenu } from "react-icons/gi";
 import { CgNotes } from "react-icons/cg";
 import { FcAbout, FcMoneyTransfer } from "react-icons/fc";
 import { RiCloseCircleFill } from "react-icons/ri";
-
-const Head = () => {
-  const [buttonPopup, setButtonPopup] = useState(false);
+const Head = memo(() => {
+  const buttonPopup = useRef(false);
   const [iconSize, setIconSize] = useState(20);
   const [burgerStatus, setBurgerStatus] = useState(false);
   const [more, setMore] = useState(false);
-
   const Morefun = () => {
     more ? setMore(false) : setMore(true);
   };
-
   const MoreDisable = () => {
     setMore(false);
   };
-  return (
-    <HeaderC>
+  return <HeaderC>
       <TopNav>
         <a href="/">
           <img src="/images/csilogo.png" alt="" />
@@ -41,12 +39,10 @@ const Head = () => {
         <Heading>
           <h1>COMPUTER SOCIETY OF INDIA</h1>
           <span>
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter.typeString("Region 7 Chapters");
-                typewriter.start();
-              }}
-            />
+            <Typewriter onInit={typewriter => {
+            typewriter.typeString("Region 7 Chapters");
+            typewriter.start();
+          }} />
           </span>
         </Heading>
       </TopNav>
@@ -56,7 +52,7 @@ const Head = () => {
           <li>
             <AiFillHome size={iconSize} />
             <a href="#">
-              <button onClick={() => setButtonPopup(true)}>Home</button>
+              <button onClick={() => buttonPopup.current = true}>Home</button>
             </a>
           </li>
           <li>
@@ -67,7 +63,7 @@ const Head = () => {
           <li>
             <GiPublicSpeaker size={iconSize} />
             <a href="/chiefGuest">
-              <button onClick={() => setButtonPopup(false)}>Chief guest</button>
+              <button onClick={() => buttonPopup.current = false}>Chief guest</button>
             </a>
           </li>
 
@@ -88,17 +84,15 @@ const Head = () => {
           {/* <li>
             <FcAbout size={iconSize} />
             <a href="/#au">About Us</a>
-          </li>
-
-          <li>
+           </li>
+           <li>
             <BiBody size={iconSize} />
             <a href="/#ob">Organising body</a>
-          </li>
-          
-          <li>
+           </li>
+                     <li>
             <MdOutlineGroupAdd size={iconSize} />
             <a href="/#cm">Committee members</a>
-          </li> */}
+           </li> */}
         </Ul>
 
         <MenuButton show={burgerStatus}>
@@ -107,16 +101,12 @@ const Head = () => {
           </button>
         </MenuButton>
 
-        <BurgerNav
-          show={burgerStatus}
-          className=" bg-gray-gradient"
-          onClick={() => setBurgerStatus(false)}
-        >
+        <BurgerNav show={burgerStatus} className=" bg-gray-gradient" onClick={() => setBurgerStatus(false)}>
           <li>
             <span>
               <AiFillHome size={20} />
               <a href="#">
-                <button onClick={() => setButtonPopup(true)}>Home</button>
+                <button onClick={() => buttonPopup.current = true}>Home</button>
               </a>
             </span>
           </li>
@@ -191,12 +181,13 @@ const Head = () => {
               <a href="/sponsors">Sponsors</a>
             </span>
           </li>
-          <div style={{ marginLeft: "43vw" }}>
+          <div style={{
+          marginLeft: "43vw"
+        }}>
             {/* <button on onClick={() => setBurgerStatus(false)}>
               <RiCloseCircleFill
-
-                size={47} />
-            </button> */}
+                 size={47} />
+             </button> */}
           </div>
         </BurgerNav>
       </MiddleNav>
@@ -236,12 +227,9 @@ const Head = () => {
           </li>
         </More>
       </BottomNav>
-    </HeaderC>
-  );
-};
-
+    </HeaderC>;
+});
 export default Head;
-
 const HeaderC = styled.div`
   /* height: 48vh; */
   width: 100%;
@@ -255,7 +243,6 @@ const HeaderC = styled.div`
     /* width: 160vw; */
   }
 `;
-
 const TopNav = styled.div`
   width: 100%;
   height: 19.5vh;
@@ -294,7 +281,6 @@ const TopNav = styled.div`
     }
   }
 `;
-
 const Heading = styled.div`
   color: #f5f5f5;
 
@@ -325,7 +311,6 @@ const Heading = styled.div`
     }
   }
 `;
-
 const MiddleNav = styled.div`
   height: 8.5vh;
   display: flex;
@@ -393,14 +378,13 @@ const Ul = styled.div`
         width: 100vw;
     } */
 `;
-
 const MenuButton = styled.div`
   width: 10vw;
   height: 100%;
   display: flex;
   justify-content: center;
   margin-left: 90vw;
-  display: ${(props) => (props.show ? "none" : "flex")};
+  display: ${props => props.show ? "none" : "flex"};
   /* background-color: pink; */
   align-items: center;
   z-index: 1;
@@ -418,7 +402,6 @@ const MenuButton = styled.div`
     display: flex;
   }
 `;
-
 const BurgerNav = styled.div`
   z-index: 1;
   position: fixed;
@@ -431,7 +414,7 @@ const BurgerNav = styled.div`
   /* align-items: center; */
   /* border-radius: 20px; */
 
-  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  transform: ${props => props.show ? "translateX(0)" : "translateX(100%)"};
   transition: transform 0.5s;
 
   li {
@@ -494,13 +477,11 @@ const BurgerNav = styled.div`
     }
   }
 `;
-
 const DownAr = styled.div`
-  display: ${(props) => (props.show ? "none" : "")};
+  display: ${props => props.show ? "none" : ""};
 `;
-
 const UpAr = styled.div`
-  display: ${(props) => (props.show ? "" : "none")};
+  display: ${props => props.show ? "" : "none"};
 `;
 const Morescreen = styled.div`
   background-color: transparent;
@@ -516,8 +497,8 @@ const BottomNav = styled.div`
   top: 28vh;
   z-index: 1;
   /* background-color: pink; */
-  animation: ${(props) => (props.show ? "TranslateY 1s" : "")};
-  display: ${(props) => (props.show ? "" : "none")};
+  animation: ${props => props.show ? "TranslateY 1s" : ""};
+  display: ${props => props.show ? "" : "none"};
   transition: transform 0.5s;
   @media all and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
     display: none;
