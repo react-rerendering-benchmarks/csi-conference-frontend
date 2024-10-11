@@ -1,16 +1,13 @@
+import { memo } from "react";
 import React from "react";
 import styled from "styled-components";
-const error = () => {
-  return (
-    <Error>
+const error = memo(() => {
+  return <Error>
       {" "}
       <span className="rainbow">The site requested is not found</span>{" "}
-    </Error>
-  );
-};
-
+    </Error>;
+});
 export default error;
-
 const Error = styled.div`
   span {
     color: red;

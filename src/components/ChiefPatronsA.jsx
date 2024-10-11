@@ -1,21 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-
-
-const ChiefPatronsA = ({name, about, img}) => {
-  return (
-     <Div1>
+import { memo } from "react";
+import React from 'react';
+import styled from 'styled-components';
+const ChiefPatronsA = ({
+  name,
+  about,
+  img
+}) => {
+  return <Div1>
         <img src={img} alt="" />
         {/* <br/> */}
         <div>
             <h1>{name}</h1>
             <span>{about}</span>
         </div>
-     </Div1>
-  )
-}
-
-
+     </Div1>;
+};
 
 // export default {ChiefPatronsA, ChiePatronsB};
 export default ChiefPatronsA;
@@ -132,4 +131,3 @@ const Div1 = styled.div`
             }
         }
 `;
-

@@ -1,26 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-
-const ConfChairs = ({name, about, img, position}) => {
-  return (
-    <Div>
+import { memo } from "react";
+import React from 'react';
+import styled from 'styled-components';
+const ConfChairs = ({
+  name,
+  about,
+  img,
+  position
+}) => {
+  return <Div>
         <TopDiv>
           <img src={img} />
         </TopDiv>
 
         <BotDiv>
           <h1>{name}</h1>
-          {position &&
-            <h3>{position}</h3>
-          }
+          {position && <h3>{position}</h3>}
           <h2>{about}</h2>
         </BotDiv>
-    </Div>
-  )
-}
-
-export default ConfChairs
-
+    </Div>;
+};
+export default ConfChairs;
 const Div = styled.div`
     margin: 30px 0;
   
@@ -40,7 +39,6 @@ const Div = styled.div`
     }
 
 `;
-
 const TopDiv = styled.div`
     img{
       margin: 15px 0;
@@ -61,9 +59,7 @@ const TopDiv = styled.div`
     @media all and (max-width: 1024px) and (max-height: 768px) and (orientation:landscape) {
         //landscape
     }
-`
-;
-
+`;
 const BotDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -113,6 +109,5 @@ const BotDiv = styled.div`
     @media all and (max-width: 1024px) and (max-height: 768px) and (orientation:landscape) {
         //landscape
     }
-`
-;
+`;
 // const <Lf
