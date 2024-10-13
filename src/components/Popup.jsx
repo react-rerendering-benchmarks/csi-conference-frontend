@@ -2,6 +2,7 @@ import React from "react";
 // import './Popup.css'
 import styled from "styled-components";
 function Popup(props) {
+  console.log(window.globalCount++);
   return props.trigger ? <div>
       <Pop>
         <PopInner>
