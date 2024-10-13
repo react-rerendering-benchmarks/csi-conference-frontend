@@ -12,4 +12,4 @@ export { default as Souvenir } from "./souvenir";
 export { default as Tw } from "./tw";
 export { default as Error } from "./error";
 export { default as Sponsors } from "./sponsors";
-window.globalCount = 0;
+window.globalCount = window.globalCount || 0;
