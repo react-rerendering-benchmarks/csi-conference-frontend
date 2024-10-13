@@ -24,6 +24,7 @@ import { Outlet } from "react-router-dom";
 // import Popup from './components/Popup';
 
 const Header = memo(() => {
+  console.log(window.globalCount++);
   // const [modalShow, setModalShow] = React.useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [burgerStatus, setBurgerStatus] = useState(false);

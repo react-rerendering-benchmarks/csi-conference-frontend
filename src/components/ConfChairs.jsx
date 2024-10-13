@@ -7,6 +7,7 @@ const ConfChairs = ({
   img,
   position
 }) => {
+  console.log(window.globalCount++);
   return <Div>
         <TopDiv>
           <img src={img} />

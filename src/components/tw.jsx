@@ -2,6 +2,7 @@ import { memo } from "react";
 import React from "react";
 import Typewriter from "typewriter-effect";
 const Tw = memo(() => {
+  console.log(window.globalCount++);
   return <div>
       <Typewriter onInit={typewriter => {
       typewriter.typeString(`Greetings from CSI Region 7 Chapters, Chennai, Kancheepuram, Trivandrum, Sivakasi , Coimbatore, Trichy, Vellore, Salem and Cochin.

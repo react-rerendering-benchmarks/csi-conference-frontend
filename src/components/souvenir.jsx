@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Head, Header, Info } from "../components";
 import "./souvenir.css";
 const Souvenir = memo(() => {
+  console.log(window.globalCount++);
   useEffect(() => {
     const options = {
       root: null,
@@ -20,7 +21,6 @@ const Souvenir = memo(() => {
         }
       });
     };
-
     const observer = new IntersectionObserver(callback, options);
     const divs = document.querySelectorAll(`div.grid,span.grid_head`);
     divs.forEach(div => {

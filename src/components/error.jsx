@@ -2,6 +2,7 @@ import { memo } from "react";
 import React from "react";
 import styled from "styled-components";
 const error = memo(() => {
+  console.log(window.globalCount++);
   return <Error>
       {" "}
       <span className="rainbow">The site requested is not found</span>{" "}

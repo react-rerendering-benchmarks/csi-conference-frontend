@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Tw from "./tw";
 import "./hero.css";
 const Aboutus = memo(() => {
+  console.log(window.globalCount++);
   const tw = useRef(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
   useEffect(() => {
@@ -24,7 +25,6 @@ const Aboutus = memo(() => {
         }
       });
     };
-
     const observer = new IntersectionObserver(callback, options);
     const divs = document.querySelectorAll("div.aboutus, div.intro, div.venue, div.il, div.c1, li.c2, li.c3, li.c4, li.c5");
     divs.forEach(div => {

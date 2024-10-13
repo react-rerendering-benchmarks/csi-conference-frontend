@@ -15,6 +15,7 @@ import Info from "./Info";
 import ScrollToTop from "react-scroll-to-top";
 import { GrClose } from "react-icons/gr";
 const Hero = memo(() => {
+  console.log(window.globalCount++);
   const [buttonPopup, setButtonPopup] = useState(true);
   let ChfPat = 0;
   let ConfChr = 0;
@@ -34,7 +35,6 @@ const Hero = memo(() => {
         }
       });
     };
-
     const observer = new IntersectionObserver(callback, options);
     const divs = document.querySelectorAll(`div.test,div.testh1, div.test1,div.test1h1, div.z, div.a, div.b, div.c, div.d, div.e, 
       div.f, div.g,div.h, div.i, div.j, div.k, div.cc,div.fee, div.payment, div.ccc,div.fc,div.sc,div.rc,div.hc,div.tpc,div.tc,div.civ      `);
@@ -191,7 +191,10 @@ const Hero = memo(() => {
                   </li>
                  </Ul> */}
                 <ConfGrid>
-                  {confChairsobj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {confChairsobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -201,7 +204,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {confConvobj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {confConvobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -211,7 +217,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {confCoordinationobj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {confCoordinationobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -219,7 +228,10 @@ const Hero = memo(() => {
                 <CommiteeTitle className="">Finance Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {financeCommitteeObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {financeCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -227,7 +239,10 @@ const Hero = memo(() => {
                 <CommiteeTitle className="">Stage Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {stageCommitteeObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {stageCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -237,7 +252,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {registrationCommitteeObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {registrationCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -247,7 +265,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {hospitalityCommitteeObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {hospitalityCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -257,7 +278,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {technicalProgrammingObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {technicalProgrammingObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -265,7 +289,10 @@ const Hero = memo(() => {
                 <CommiteeTitle className="">Transport Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {transportCommitteeObj.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {transportCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -275,7 +302,10 @@ const Hero = memo(() => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {inauguralAndValedictory.map(member => <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />)}
+                  {inauguralAndValedictory.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 

@@ -6,6 +6,7 @@ import "./hero.css";
 import Header from "./Header";
 import Info from "./Info";
 const chiefGuest = memo(() => {
+  console.log(window.globalCount++);
   return <Div>
       <LeftWrap>
         <img className="animate" src="/images/isro.avif" alt="" />

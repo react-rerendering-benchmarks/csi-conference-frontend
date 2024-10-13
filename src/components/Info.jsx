@@ -4,6 +4,7 @@ import styled from "styled-components";
 // import { FaCopyright } from 'react-icons/fa'
 import { BiCopyright } from "react-icons/bi";
 const Info = memo(() => {
+  console.log(window.globalCount++);
   return <InfoC className="bg-slate-700">
       <BiCopyright size={22} />
       <span>icngt2023.org - All rights reserved.</span>

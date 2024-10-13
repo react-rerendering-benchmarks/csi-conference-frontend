@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header, Head, Hero, Info, ChiefGuest, Souvenir, Error, Sponsors } from "./components/index";
 const App = memo(function App() {
+  console.log(window.globalCount++);
   return <BrowserRouter>
       <Routes>
         <Route path="*" element={[<Head />, <Error />, <Info />]} />
@@ -31,5 +32,4 @@ const App = memo(function App() {
   //Hello
   ;
 });
-
 export default App;

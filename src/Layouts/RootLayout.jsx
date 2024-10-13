@@ -6,6 +6,7 @@ import Info from '../components/Info';
 import { Outlet } from 'react-router-dom';
 import Head from '../components/Head';
 const RootLayout = memo(() => {
+  console.log(window.globalCount++);
   return <Div>
       <Header />
       <main>

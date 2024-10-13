@@ -20,6 +20,7 @@ import { CgNotes } from "react-icons/cg";
 import { FcAbout, FcMoneyTransfer } from "react-icons/fc";
 import { RiCloseCircleFill } from "react-icons/ri";
 const Head = memo(() => {
+  console.log(window.globalCount++);
   const buttonPopup = useRef(false);
   const [iconSize, setIconSize] = useState(20);
   const [burgerStatus, setBurgerStatus] = useState(false);

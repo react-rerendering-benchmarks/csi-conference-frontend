@@ -2,6 +2,7 @@ import { memo } from "react";
 import React from "react";
 import styled from "styled-components";
 const ud = memo(() => {
+  console.log(window.globalCount++);
   return <UD>
       <span> Site Under Development </span>
     </UD>;

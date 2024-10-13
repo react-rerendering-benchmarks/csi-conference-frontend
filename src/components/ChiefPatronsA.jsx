@@ -6,6 +6,7 @@ const ChiefPatronsA = ({
   about,
   img
 }) => {
+  console.log(window.globalCount++);
   return <Div1>
         <img src={img} alt="" />
         {/* <br/> */}
