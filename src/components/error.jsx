@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 const error = () => {
-  return (
-    <Error>
+  console.log(window.globalCount++);
+  return <Error>
       {" "}
       <span className="rainbow">The site requested is not found</span>{" "}
-    </Error>
-  );
+    </Error>;
 };
-
 export default error;
-
 const Error = styled.div`
   span {
     color: red;

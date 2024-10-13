@@ -2,20 +2,18 @@ import { React, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Tw from "./tw";
 import "./hero.css";
-
 const Aboutus = () => {
+  console.log(window.globalCount++);
   const tw = useRef(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
-
   useEffect(() => {
     const options = {
       root: null,
       threshold: 0.1,
-      rootMargin: "0px",
+      rootMargin: "0px"
     };
-
-    const callback = (entries) => {
-      entries.forEach((entry) => {
+    const callback = entries => {
+      entries.forEach(entry => {
         if (entry.target.classList.contains("intro")) {
           if (entry.isIntersecting) setIsIntersecting(true);
         }
@@ -27,21 +25,12 @@ const Aboutus = () => {
       });
     };
     const observer = new IntersectionObserver(callback, options);
-
-    const divs = document.querySelectorAll(
-      "div.aboutus, div.intro, div.venue, div.il, div.c1, li.c2, li.c3, li.c4, li.c5"
-    );
-
-    divs.forEach((div) => {
+    const divs = document.querySelectorAll("div.aboutus, div.intro, div.venue, div.il, div.c1, li.c2, li.c3, li.c4, li.c5");
+    divs.forEach(div => {
       observer.observe(div);
     });
   });
-
-  return (
-    <Parent
-      id="au"
-      className="font-poppins md:ml-48 md:mr-48 ml-6 mr-6 text-lg space-y-5"
-    >
+  return <Parent id="au" className="font-poppins md:ml-48 md:mr-48 ml-6 mr-6 text-lg space-y-5">
       <Title className="aboutus text-center font-extrabold md:ml-32 md:mr-32 md:mb-10 mr-8 ml-8 md:text-3xl mt-10 text-sky-200 rounded-3xl bg-gray-gradient">
         About Us
       </Title>
@@ -80,10 +69,7 @@ const Aboutus = () => {
 
         <Link className="animate-pulse">
           {" "}
-          <a
-            href="https://www.routledge.com/Conference-Proceedings-Series-on-Intelligent-Systems-Data-Engineering/book-series/CPSISDEO"
-            target="_blank"
-          >
+          <a href="https://www.routledge.com/Conference-Proceedings-Series-on-Intelligent-Systems-Data-Engineering/book-series/CPSISDEO" target="_blank">
             Publication{" "}
           </a>
         </Link>
@@ -102,7 +88,7 @@ const Aboutus = () => {
           >
             Click here for more information
           </a>
-        </Link> */}
+         </Link> */}
       </ImportantLinks>
 
       <Contact className="py-2">
@@ -130,12 +116,9 @@ const Aboutus = () => {
           </li>
         </Ul>
       </Contact>
-    </Parent>
-  );
+    </Parent>;
 };
-
 export default Aboutus;
-
 const Parent = styled.div``;
 const Title = styled.div``;
 const H1 = styled.div``;
@@ -145,7 +128,6 @@ const Link = styled.div`
   font-weight: 500;
   color: rgb(3, 105, 161);
 `;
-
 const Contact = styled.div``;
 const Ul = styled.div`
   span {

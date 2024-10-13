@@ -4,27 +4,22 @@ import Typewriter from "typewriter-effect";
 import "./hero.css";
 import Header from "./Header";
 import Info from "./Info";
-
 const chiefGuest = () => {
-  return (
-    <Div>
+  console.log(window.globalCount++);
+  return <Div>
       <LeftWrap>
         <img className="animate" src="/images/isro.avif" alt="" />
         {/* <h1>
                 Mylswamy Annadurai
-        </h1> */}
+         </h1> */}
       </LeftWrap>
       <RightWrap>
         <h1>Mylswamy Annadurai</h1>
         <div>
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter.typeString(
-                "Former Director, ISRO Satelite Centre & Chandrayan Project."
-              );
-              typewriter.start();
-            }}
-          />
+          <Typewriter onInit={typewriter => {
+          typewriter.typeString("Former Director, ISRO Satelite Centre & Chandrayan Project.");
+          typewriter.start();
+        }} />
         </div>
         <Border className=" border-double border-[4px]  border-sky-600 animate " />
         <span className="text-justify animate">
@@ -40,12 +35,9 @@ const chiefGuest = () => {
 
         {/* <h2>Former Director, ISRO Satelite Centre & Chandrayan Project.</h2> */}
       </RightWrap>
-    </Div>
-  );
+    </Div>;
 };
-
 export default chiefGuest;
-
 const Div = styled.div`
   display: flex;
   margin-bottom: auto;
@@ -59,7 +51,6 @@ const Div = styled.div`
     width: 100%;
   }
 `;
-
 const LeftWrap = styled.div`
   width: 35%;
   display: flex;
@@ -98,7 +89,6 @@ const LeftWrap = styled.div`
 
   /* margin-right: 20px; */
 `;
-
 const RightWrap = styled.div`
   width: 65%;
   display: flex;
@@ -170,7 +160,6 @@ const RightWrap = styled.div`
     }
   }
 `;
-
 const Border = styled.div`
   margin-right: 180px;
   margin-top: 10px;

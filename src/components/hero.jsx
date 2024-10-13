@@ -5,19 +5,7 @@ import Aboutus from "./aboutus";
 import Header from "./Header";
 import ChiefPatronsA from "./ChiefPatronsA";
 import ChiefPatronsB from "./ChiefPatronsB";
-import {
-  chiefPatobj,
-  confChairsobj,
-  confConvobj,
-  confCoordinationobj,
-  financeCommitteeObj,
-  stageCommitteeObj,
-  registrationCommitteeObj,
-  hospitalityCommitteeObj,
-  technicalProgrammingObj,
-  transportCommitteeObj,
-  inauguralAndValedictory,
-} from "../Objects/details";
+import { chiefPatobj, confChairsobj, confConvobj, confCoordinationobj, financeCommitteeObj, stageCommitteeObj, registrationCommitteeObj, hospitalityCommitteeObj, technicalProgrammingObj, transportCommitteeObj, inauguralAndValedictory } from "../Objects/details";
 import ConfChairs from "./ConfChairs";
 import Popup from "./Popup";
 // GrClose
@@ -26,20 +14,19 @@ import Info from "./Info";
 import ScrollToTop from "react-scroll-to-top";
 import { GrClose } from "react-icons/gr";
 const Hero = () => {
+  console.log(window.globalCount++);
   const [buttonPopup, setButtonPopup] = useState(true);
   let ChfPat = 0;
   let ConfChr = 0;
-
   const [burgerStatus, setBurgerStatus] = useState(false);
   useEffect(() => {
     const options = {
       root: null,
       threshold: 0.1,
-      rootMargin: "0px",
+      rootMargin: "0px"
     };
-
-    const callback = (entries) => {
-      entries.forEach((entry) => {
+    const callback = entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("animate");
         if (!entry.isIntersecting) {
           entry.target.classList.remove("animate");
@@ -48,17 +35,12 @@ const Hero = () => {
       });
     };
     const observer = new IntersectionObserver(callback, options);
-
-    const divs = document.querySelectorAll(
-      `div.test,div.testh1, div.test1,div.test1h1, div.z, div.a, div.b, div.c, div.d, div.e, 
-      div.f, div.g,div.h, div.i, div.j, div.k, div.cc,div.fee, div.payment, div.ccc,div.fc,div.sc,div.rc,div.hc,div.tpc,div.tc,div.civ      `
-    );
-
-    divs.forEach((div) => {
+    const divs = document.querySelectorAll(`div.test,div.testh1, div.test1,div.test1h1, div.z, div.a, div.b, div.c, div.d, div.e, 
+      div.f, div.g,div.h, div.i, div.j, div.k, div.cc,div.fee, div.payment, div.ccc,div.fc,div.sc,div.rc,div.hc,div.tpc,div.tc,div.civ      `);
+    divs.forEach(div => {
       observer.observe(div);
     });
   });
-
   let Rend = () => {
     ChfPat += 1;
     if (ChfPat % 2 == 0) {
@@ -67,17 +49,13 @@ const Hero = () => {
       return 1;
     }
   };
-
-  return (
-    <div>
-      <ScrollToTop
-        smooth
-        // color="#0c4a6e"
-        // svgPath=""
-        width="38"
-        height="20"
-        style={{ backgroundColor: "#bfe4f2" }}
-      />
+  return <div>
+      <ScrollToTop smooth
+    // color="#0c4a6e"
+    // svgPath=""
+    width="38" height="20" style={{
+      backgroundColor: "#bfe4f2"
+    }} />
       <Main className="mt-10 text-center">
         <Title className="font-poppins text-center text-sky-600 text-md px-5 md:text-xl font-extrabold">
           International Conference on Next-Gen Technologies in Computational
@@ -90,11 +68,8 @@ const Hero = () => {
         </Title>
 
         <Content className="mb-6">
-          <Border
-            id="ac"
-            className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
-          ml-[32px] mr-[32px] border-sky-600  "
-          />
+          <Border id="ac" className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
+          ml-[32px] mr-[32px] border-sky-600  " />
           <Div className="md:ml-48 md:mr-48 ml-6 mr-6 font-poppins animate">
             <div className="testh1 opacity-0">
               <Head1 className="md:ml-32 md:mr-32 mr-8 ml-8 font-bold md:text-xl mt-10 text-sky-200 rounded-3xl bg-gray-gradient ">
@@ -127,11 +102,8 @@ const Hero = () => {
             </div>
           </Div>
 
-          <Border
-            id="ob"
-            className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
-          ml-[32px] mr-[32px] border-sky-600  "
-          />
+          <Border id="ob" className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
+          ml-[32px] mr-[32px] border-sky-600  " />
           <Div className=" md:ml-48 md:mr-48 ml-6 mr-6 font-poppins animate">
             <div className="test1h1 opacity-0">
               {" "}
@@ -169,11 +141,8 @@ const Hero = () => {
             </div>
           </Div>
 
-          <Border
-            id="cm"
-            className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
-          ml-[32px] mr-[32px] border-sky-600  "
-          />
+          <Border id="cm" className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
+          ml-[32px] mr-[32px] border-sky-600  " />
           <Div className=" md:ml-48 md:mr-48 ml-0 mr-0 font-poppins animate">
             <div className="z opacity-0">
               <Head1 className="md:ml-32 md:mr-32 mr-8 ml-8 font-bold md:text-xl mt-10 text-sky-200 rounded-3xl bg-gray-gradient ">
@@ -202,22 +171,8 @@ const Hero = () => {
                     IEEE CS Madras & ACM Chennai, Former AVP (Systems), The
                     Hindu{" "}
                   </li>
-                </Ul> */}
-                {chiefPatobj.map((member) =>
-                  Rend() ? (
-                    <ChiefPatronsA
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                    />
-                  ) : (
-                    <ChiefPatronsB
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                    />
-                  )
-                )}
+                 </Ul> */}
+                {chiefPatobj.map(member => Rend() ? <ChiefPatronsA name={member.name} about={member.about} img={member.img} /> : <ChiefPatronsB name={member.name} about={member.about} img={member.img} />)}
               </div>
               <div className="cc">
                 <CommiteeTitle>Conference Chair(s) </CommiteeTitle>
@@ -233,16 +188,12 @@ const Hero = () => {
                     Deputy Director General, National Informatics centre Chennai
                     and past Chair of CSI Chennai Chapter{" "}
                   </li>
-                </Ul> */}
+                 </Ul> */}
                 <ConfGrid>
-                  {confChairsobj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {confChairsobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -252,14 +203,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {confConvobj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {confConvobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -269,14 +216,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {confCoordinationobj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {confCoordinationobj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -284,14 +227,10 @@ const Hero = () => {
                 <CommiteeTitle className="">Finance Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {financeCommitteeObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {financeCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -299,14 +238,10 @@ const Hero = () => {
                 <CommiteeTitle className="">Stage Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {stageCommitteeObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {stageCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -316,14 +251,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {registrationCommitteeObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {registrationCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -333,14 +264,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {hospitalityCommitteeObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {hospitalityCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -350,14 +277,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {technicalProgrammingObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {technicalProgrammingObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -365,14 +288,10 @@ const Hero = () => {
                 <CommiteeTitle className="">Transport Committee </CommiteeTitle>
 
                 <ConfGrid>
-                  {transportCommitteeObj.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {transportCommitteeObj.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -382,14 +301,10 @@ const Hero = () => {
                 </CommiteeTitle>
 
                 <ConfGrid>
-                  {inauguralAndValedictory.map((member) => (
-                    <ConfChairs
-                      name={member.name}
-                      about={member.about}
-                      img={member.img}
-                      position={member.position}
-                    />
-                  ))}
+                  {inauguralAndValedictory.map(member => {
+                  console.log(window.globalCount++);
+                  return <ConfChairs name={member.name} about={member.about} img={member.img} position={member.position} />;
+                })}
                 </ConfGrid>
               </div>
 
@@ -590,10 +505,10 @@ const Hero = () => {
 
                 <Ul>
                   {/* <li>
-                  {" "}
-                  Chief Guest: Dr. Mylswamy Annadurai, Former Director, ISRO
-                  Satelite Centre & Chandrayan Project.
-                </li> */}
+                   {" "}
+                   Chief Guest: Dr. Mylswamy Annadurai, Former Director, ISRO
+                   Satelite Centre & Chandrayan Project.
+                   </li> */}
                   <li>
                     Mr. Dhakshinamoorthy R, Principal Enterprise Architect, IoT
                     BU, TCS
@@ -601,8 +516,8 @@ const Hero = () => {
                 </Ul>
               </div>
               {/* <div className="i opacity-0">
-              <CommiteeTitle>Venue</CommiteeTitle>
-              <Ul>
+               <CommiteeTitle>Venue</CommiteeTitle>
+               <Ul>
                 <li>
                   Vels Institute of Science, Technology & Advanced Studies,{" "}
                 </li>
@@ -610,11 +525,11 @@ const Hero = () => {
                   PV Vaithiyalingam Rd, Velan Nagar, Krishnapuram, Pallavaram,
                   Chennai - 600117.
                 </li>
-              </Ul>
-            </div>
-            <div className="j opacity-0">
-              <CommiteeTitle id="il"> Important Links </CommiteeTitle>
-              <ul className="ml-[30px] mt-[10px] list-disc">
+               </Ul>
+               </div>
+               <div className="j opacity-0">
+               <CommiteeTitle id="il"> Important Links </CommiteeTitle>
+               <ul className="ml-[30px] mt-[10px] list-disc">
                 <li>
                   {" "}
                   <a
@@ -625,8 +540,7 @@ const Hero = () => {
                     Publication Link
                   </a>
                 </li>
-
-                <li>
+                 <li>
                   <a href="https://bit.ly/3VkMlmL" className="underline">
                     Registration Link{" "}
                   </a>
@@ -636,21 +550,20 @@ const Hero = () => {
                     Flyer Link
                   </a>
                 </li>
-
-                <li>
+                 <li>
                   <a href="http://bit.ly/3gGUdRr" className="underline">
                     {" "}
                     Submission Link
                   </a>
                 </li>
-              </ul>
-              <h1 className="text-sky-900 font-bold mt-5 animate-pulse">
+               </ul>
+               <h1 className="text-sky-900 font-bold mt-5 animate-pulse">
                 Registration deadline: February 28, 2023
-              </h1>
-              <h1 className="text-sky-900 font-bold animate-pulse ">
+               </h1>
+               <h1 className="text-sky-900 font-bold animate-pulse ">
                 Submission deadline: February 28, 2023
-              </h1>
-            </div>*/}
+               </h1>
+               </div>*/}
               <div className="k opacity-0">
                 <CommiteeTitle>Author's Instructions </CommiteeTitle>
                 <Ul>
@@ -694,11 +607,8 @@ const Hero = () => {
               </div>
             </Para1>
           </Div>
-          <Border
-            id="r"
-            className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
-          ml-[32px] mr-[32px] border-sky-600  "
-          />
+          <Border id="r" className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
+          ml-[32px] mr-[32px] border-sky-600  " />
 
           <Div className=" md:ml-48 md:mr-48 ml-6 mr-6 font-poppins animate">
             <div className="fee">
@@ -788,10 +698,9 @@ const Hero = () => {
           </Div>
 
           <Border
-            // id="r"
-            className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
-          ml-[32px] mr-[32px] border-sky-600  "
-          />
+        // id="r"
+        className=" border-double border-[4px] mt-[40px] md:ml-[128px] md:mr-[128px] 
+          ml-[32px] mr-[32px] border-sky-600  " />
         </Content>
       </Main>
       <div>
@@ -803,12 +712,9 @@ const Hero = () => {
         </button>
         <img src="/images/csi-broch1.png" />
       </Popup>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
-
 const Main = styled.div`
   /* z-index: -1; */
 `;
@@ -821,7 +727,6 @@ const Border = styled.div`
   // margin-right: 128px;
   // border-color: rgb(2, 132, 199);
 `;
-
 const Head1 = styled.div``;
 const Para1 = styled.div``;
 const Content = styled.div``;
@@ -836,7 +741,6 @@ const Ul = styled.div`
     margin-right: 5px;
   }
 `;
-
 const CommiteeTitle = styled.div`
   margin-top: 20px;
 
@@ -848,7 +752,6 @@ const CommiteeTitle = styled.div`
     font-size: 1.125rem;
   }
 `;
-
 const Payment = styled.div`
   margin-top: 40px;
   font-family: poppins;
@@ -864,9 +767,7 @@ const Payment = styled.div`
     margin-left: 4px;
   }
 `;
-
 const Grid = styled.div``;
-
 const ConfGrid = styled.div`
   display: grid;
   grid-template-columns: auto auto;

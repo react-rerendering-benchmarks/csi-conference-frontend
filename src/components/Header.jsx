@@ -12,15 +12,10 @@ import { BiBody } from "react-icons/bi";
 import { MdOutlineGroupAdd } from "react-icons/md";
 import Typewriter from "typewriter-effect";
 import Popup from "./Popup";
-
 import { useState } from "react";
-
 import { GrClose } from "react-icons/gr";
-
 import { GiHamburgerMenu, GiPublicSpeaker } from "react-icons/gi";
-
 import { FcAbout } from "react-icons/fc";
-
 import { Outlet } from "react-router-dom";
 // GiPublicSpeaker
 // import { GrClose } from 'react-icons/gr'
@@ -28,11 +23,11 @@ import { Outlet } from "react-router-dom";
 // import Popup from './components/Popup';
 
 const Header = () => {
+  console.log(window.globalCount++);
   // const [modalShow, setModalShow] = React.useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [burgerStatus, setBurgerStatus] = useState(false);
-  return (
-    <HeaderC className="bg-slate-700 py-7 pb-10 md:py-0">
+  return <HeaderC className="bg-slate-700 py-7 pb-10 md:py-0">
       <TopNav className="">
         <Logo className="">
           <a href="/">
@@ -43,16 +38,16 @@ const Header = () => {
         <Heading className="font-poppins text-white font-extrabold ml-2">
           <h1 className="sm:text-3xl ">COMPUTER SOCIETY OF INDIA</h1>
           <span>
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter.typeString("Region 7 Chapters");
-                typewriter.start();
-              }}
-            />
+            <Typewriter onInit={typewriter => {
+            typewriter.typeString("Region 7 Chapters");
+            typewriter.start();
+          }} />
           </span>
         </Heading>
       </TopNav>
-      <BottomNav style={{ color: "#f5f5f5" }}>
+      <BottomNav style={{
+      color: "#f5f5f5"
+    }}>
         <li>
           <AiFillHome size={`25`} />
           <a href="/">
@@ -75,7 +70,7 @@ const Header = () => {
           
           <RiLinksFill size={27} />
           <a href="#il">Important links</a>
-        </li> */}
+         </li> */}
 
         <li>
           <GiPublicSpeaker size={25} />
@@ -101,11 +96,8 @@ const Header = () => {
         </Button>
         {/* <button onClick={ () => setBurgerStatus(true)}>
           <GiHamburgerMenu size={25} />
-        </button> */}
-        <BurgerNav
-          show={burgerStatus}
-          className="rounded-xl bg-gray-gradient sm:w-[70vh] w-[25vh]"
-        >
+         </button> */}
+        <BurgerNav show={burgerStatus} className="rounded-xl bg-gray-gradient sm:w-[70vh] w-[25vh]">
           <CloseBgNav onClick={() => setBurgerStatus(false)}>
             <RiCloseCircleFill size={30} />
           </CloseBgNav>
@@ -155,8 +147,7 @@ const Header = () => {
                 </a>
             </MenuWrap>
             
-
-          </li> */}
+           </li> */}
           <li>
             <MenuWrap>
               <GiPublicSpeaker size={25} />
@@ -193,12 +184,9 @@ const Header = () => {
         </button>
         <img src="/images/csi-broch1.png" />
       </Popup>
-    </HeaderC>
-  );
+    </HeaderC>;
 };
-
 export default Header;
-
 const HeaderC = styled.div`
   // width: 100vw;
   // height: 32vh;
@@ -221,9 +209,7 @@ const HeaderC = styled.div`
   height: 33vh;
   } */
 `;
-
 const Main = styled.div``;
-
 const TopNav = styled.div`
   padding-top: 20px;
   display: flex;
@@ -240,7 +226,6 @@ const TopNav = styled.div`
     /* background-color: black; */
   }
 `;
-
 const Logo = styled.div`
   width: 110px;
   height: 110px;
@@ -255,7 +240,6 @@ const Logo = styled.div`
     height: 80px;
   }
 `;
-
 const Heading = styled.div`
   // display: flex;
   // flex-direction: column;
@@ -286,7 +270,6 @@ const Heading = styled.div`
   //   }
   // }
 `;
-
 const BottomNav = styled.div`
   display: flex;
   /* width: 20%; */
@@ -339,7 +322,6 @@ const BottomNav = styled.div`
     /* justify-content: left; */
   }
 `;
-
 const Button = styled.button`
   @media (min-width: 1060px) {
     display: none;
@@ -358,7 +340,6 @@ const Button = styled.button`
 
   /* padding-bottom: 2px; */
 `;
-
 const CloseBgNav = styled.button`
   margin-left: 5px;
   margin-bottom: 30px;
@@ -397,7 +378,7 @@ const BurgerNav = styled.div`
   right: 0;
   background-color: #f5f5f5;
   overflow-y: scroll;
-  transform: ${(props) => (props.show ? "translate(0)" : "translate(100%)")};
+  transform: ${props => props.show ? "translate(0)" : "translate(100%)"};
   transition: transform 0.5s;
   color: #f5f5f5;
   li {
@@ -409,7 +390,6 @@ const BurgerNav = styled.div`
     /* margin-bottom: 30px; */
   }
 `;
-
 const MenuWrap = styled.div`
   display: flex;
   align-items: center;

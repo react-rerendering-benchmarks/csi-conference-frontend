@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 const ud = () => {
-  return (
-    <UD>
+  console.log(window.globalCount++);
+  return <UD>
       <span> Site Under Development </span>
-    </UD>
-  );
+    </UD>;
 };
-
 export default ud;
-
 const UD = styled.div`
   span {
     color: red;

@@ -1,24 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import Header from '../components/Header'
-import Info from '../components/Info'
-import { Outlet } from 'react-router-dom'
-import Head from '../components/Head'
-
+import React from 'react';
+import styled from 'styled-components';
+import Header from '../components/Header';
+import Info from '../components/Info';
+import { Outlet } from 'react-router-dom';
+import Head from '../components/Head';
 const RootLayout = () => {
-  return (
-    <Div>
-      <Header/>
+  console.log(window.globalCount++);
+  return <Div>
+      <Header />
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
       {/* <Info/> */}
-    </Div>
-  )
-}
-
-export default RootLayout
-
+    </Div>;
+};
+export default RootLayout;
 const Div = styled.div`
 
     @media(min-width: 769px){

@@ -3,17 +3,16 @@ import { React, useEffect } from "react";
 import styled from "styled-components";
 import { Head, Header, Info } from "../components";
 import "./souvenir.css";
-
 const Souvenir = () => {
+  console.log(window.globalCount++);
   useEffect(() => {
     const options = {
       root: null,
       threshold: 0.1,
-      rootMargin: "0px",
+      rootMargin: "0px"
     };
-
-    const callback = (entries) => {
-      entries.forEach((entry) => {
+    const callback = entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("zoomin");
         if (!entry.isIntersecting) {
           entry.target.classList.remove("zoomin");
@@ -22,16 +21,12 @@ const Souvenir = () => {
       });
     };
     const observer = new IntersectionObserver(callback, options);
-
     const divs = document.querySelectorAll(`div.grid,span.grid_head`);
-
-    divs.forEach((div) => {
+    divs.forEach(div => {
       observer.observe(div);
     });
   });
-
-  return (
-    <div className="scroll-lock">
+  return <div className="scroll-lock">
       <div className="snap-start">
         <Head />
       </div>
@@ -77,12 +72,9 @@ const Souvenir = () => {
       </Main>
 
       {/* <Info /> */}
-    </div>
-  );
+    </div>;
 };
-
 export default Souvenir;
-
 const Main = styled.div`
   margin-right: 10px;
   margin-left: 10px;
@@ -158,7 +150,6 @@ const Border = styled.div`
   scroll-snap-align: start;
   /* margin-top: 2px; */
 `;
-
 const Details = styled.div`
   color: #0c4a6e;
   font-family: poppins;
@@ -184,7 +175,6 @@ const Details = styled.div`
   div {
   }
 `;
-
 const Grid = styled.div`
   box-shadow: 2px 10px 60px slategray;
   row-gap: 60px;
